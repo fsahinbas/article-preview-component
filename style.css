@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+:root {
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --desaturated-dark-blue: hsl(214, 17%, 51%);
+  --grayish-blue: hsl(212, 23%, 69%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  background-color: var(--light-grayish-blue);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  display: flex;
+  width: 45.625rem;
+  border-radius: 0.5rem;
+  background-color: var(--white);
+}
+
+.card-image {
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  height: 17.5rem;
+  width: 17.8125rem;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2.5rem;
+}
+
+.card-content {
+}
+
+.card-content h1 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 1.75rem;
+  letter-spacing: 0.25px;
+  color: var(--very-dark-grayish-blue);
+  margin-bottom: 0.75rem;
+}
+
+.card-content p {
+  line-height: 1.25rem;
+  letter-spacing: 0.12px;
+  color: var(--desaturated-dark-blue);
+  margin-bottom: 1.25rem;
+}
+
+.card-owner {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-owner-avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
+.name-date p:first-child {
+  font-weight: bold;
+  color: var(--very-dark-grayish-blue);
+}
+
+.name-date p:last-child {
+  font-weight: normal;
+  color: var(--grayish-blue);
+}
+
+.share-wrapper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 1rem;
+  transform: translateX(50%);
+}
+
+.share-icon {
+  height: 2rem;
+  width: 2rem;
+  background-color: var(--light-grayish-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.share-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.share-links.hidden {
+  opacity: 0;
+}
+
+.share-links .social-icons {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: var(--very-dark-grayish-blue);
+  color: var(--white);
+  width: 15.5rem;
+  padding: 1.125rem 2.25rem;
+  border-radius: 0.75rem;
+}
+
+.share-links p {
+  letter-spacing: 5px;
+  line-height: 1.25rem;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+
+  border-top: 10px solid var(--very-dark-grayish-blue);
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .card {
+    flex-direction: column;
+  }
+
+  .card-body {
+    padding: 1.25rem 1rem;
+    height: calc(100vh - 12.5rem);
+    justify-content: space-between;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0.5rem;
+  }
+
+  .card-content h1 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.2px;
+  }
+
+  .share-wrapper {
+    position: unset;
+    bottom: unset;
+    right: unset;
+    display: unset;
+    flex-direction: unset;
+    align-items: unset;
+    gap: unset;
+    transform: unset;
+  }
+
+  .share-links {
+    position: absolute;
+    left: -1rem;
+    bottom: -1.25rem;
+    background-color: var(--very-dark-grayish-blue);
+    color: var(--white);
+    border-bottom-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    z-index: 10;
+    width: 100vw;
+    height: 4.5rem;
+  }
+
+  .share-links .social-icons {
+    justify-content: flex-start;
+    padding: 1.5rem 0;
+  }
+  .share-icon {
+    position: relative;
+    top: 0.125rem;
+    z-index: 20;
+  }
+
+  .arrow-down {
+    display: none;
+  }
+}
